@@ -1,0 +1,15 @@
+services:
+  surrealdb:
+    image: surrealdb/surrealdb
+    container_name: surrealdb
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - surrealdb_data:/data
+      - ./import.surql:/data/import.surql
+    command: start -u root -p root --log debug rocksdb://data/mydatabase.db
+    user: "root"
+
+volumes:
+  surrealdb_data:

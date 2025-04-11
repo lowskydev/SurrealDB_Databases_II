@@ -8,19 +8,24 @@ with Surreal("ws://localhost:8000/rpc") as db:
     db.use("Databases2", "Graph")
 
     # get every entry in the table
+    time_start = time.time()
     nodes_table = db.query("SELECT * FROM Nodes")
+    time_end = time.time()
     print('----')
-    print('Nodes table loaded')
+    print(f'Nodes table loaded ({(time_end - time_start):.2f} seconds)')
     print('----')
 
     # optimizing shit
+    time_start = time.time()
     nodes_dict = {item['node']: item for item in nodes_table}
-    print('Nodes table converted to dictionary for faster access')
+    time_end = time.time()
+    print(f'Nodes table converted to dictionary for faster access ({(time_end - time_start):.2f} seconds)')
     print('----')
 
     # Load CSV
     csv_file = "cskg.tsv"
 
+    time_start = time.time()
     df = pd.read_csv(
         csv_file,
         sep="\t",
@@ -28,7 +33,8 @@ with Surreal("ws://localhost:8000/rpc") as db:
         dtype=str,
         low_memory=False
     )
-    print('TSV loaded')
+    time_end = time.time()
+    print(f'TSV loaded ({(time_end - time_start):.2f} seconds)')
     print('----')
 
 
@@ -38,10 +44,17 @@ with Surreal("ws://localhost:8000/rpc") as db:
         surreal_node_2 = nodes_dict.get(row['node2'])
 
         if not surreal_node_1:
-            print(f"Node 1 '{row['node1']}' not found in SurrealDB")
+            raise Exception(f"ERROR: Node 1 '{row['node1']}' not found in SurrealDB")
 
         if not surreal_node_2:
-            print(f"Node 2 '{row['node2']}' not found in SurrealDB")
+            raise Exception(f"ERROR: Node 2 '{row['node2']}' not found in SurrealDB")
+
+        queries = []
+        queries.append(f"RELATE {surreal_node_1['id']}->edge->{surreal_node_2['id']} SET relation = '{row["relation"]}';")
+
+        db.query(" ".join(queries))
+        break
+
 
         # if i % 100000 == 0:
         #     print(f"{i / df.shape[0] * 100:.4f}%")
@@ -49,7 +62,7 @@ with Surreal("ws://localhost:8000/rpc") as db:
     end_time = time.time()
 
     print("----")
-    print(f"Time taken to check nodes: {(end_time - start_time)/60:.2f} minutes")
+    print(f"Made realtions between nodes ({(end_time - start_time)/60:.2f} minutes)")
     print("----")
 
 

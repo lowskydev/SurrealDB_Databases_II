@@ -13,6 +13,11 @@ with Surreal("ws://localhost:8000/rpc") as db:
     print('Nodes table loaded')
     print('----')
 
+    # optimizing shit
+    nodes_dict = {item['node']: item for item in nodes_table}
+    print('Nodes table converted to dictionary for faster access')
+    print('----')
+
     # Load CSV
     csv_file = "cskg.tsv"
 
@@ -27,15 +32,10 @@ with Surreal("ws://localhost:8000/rpc") as db:
     print('----')
 
 
-
-    # Create array of data to insert to surreal
-    # big_data = []
-
-    # start timer
     start_time = time.time()
-    for _, row in df.iterrows():
-        surreal_node_1 = [item for item in nodes_table if item['node'] == row['node1']]
-        surreal_node_2 = [item for item in nodes_table if item['node'] == row['node2']]
+    for i, row in df.iterrows():
+        surreal_node_1 = nodes_dict.get(row['node1'])
+        surreal_node_2 = nodes_dict.get(row['node2'])
 
         if not surreal_node_1:
             print(f"Node 1 '{row['node1']}' not found in SurrealDB")
@@ -43,19 +43,18 @@ with Surreal("ws://localhost:8000/rpc") as db:
         if not surreal_node_2:
             print(f"Node 2 '{row['node2']}' not found in SurrealDB")
 
-        # show percentage of completion
-        if _ != 0 and _ % 10 == 0:
-            break
-            # print(f"{_ / df.shape[0] * 100:.4f}%")
+        # if i % 100000 == 0:
+        #     print(f"{i / df.shape[0] * 100:.4f}%")
 
-    # end time
     end_time = time.time()
 
-    # show time in minutes
     print("----")
-    print(f"Time taken to check nodes in minutes: {(end_time - start_time) / 60:.2f} minutes")
+    print(f"Time taken to check nodes: {(end_time - start_time)/60:.2f} minutes")
     print("----")
 
+
+    # Create array of data to insert to surreal
+    # big_data = []
 
         # data = {
         #     "id": row["id"],

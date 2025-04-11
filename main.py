@@ -39,6 +39,8 @@ with Surreal("ws://localhost:8000/rpc") as db:
 
 
     start_time = time.time()
+    queries = []
+    BATCH_SIZE = 1000
     for i, row in df.iterrows():
         surreal_node_1 = nodes_dict.get(row['node1'])
         surreal_node_2 = nodes_dict.get(row['node2'])
@@ -53,38 +55,17 @@ with Surreal("ws://localhost:8000/rpc") as db:
         queries.append(f"RELATE {surreal_node_1['id']}->edge->{surreal_node_2['id']} SET relation = '{row["relation"]}';")
 
         db.query(" ".join(queries))
-        break
+
+        if i % BATCH_SIZE == 0 and i != 0:
+            db.query(" ".join(queries))
+            queries = []
 
 
-        # if i % 100000 == 0:
-        #     print(f"{i / df.shape[0] * 100:.4f}%")
+        if i % 10000 == 0:
+            print(f"{i / df.shape[0] * 100:.2f}%")
 
     end_time = time.time()
 
     print("----")
     print(f"Made realtions between nodes ({(end_time - start_time)/60:.2f} minutes)")
     print("----")
-
-
-    # Create array of data to insert to surreal
-    # big_data = []
-
-        # data = {
-        #     "id": row["id"],
-        #     "node1": row["node1"],
-        #     "relation": row["relation"],
-        #     "node2": row["node2"],
-        #     "node1_label": row["node1;label"],
-        #     "node2_label": row["node2;label"],
-        #     "relation_label": row["relation;label"],
-        #     "relation_dimension": row["relation;dimension"],
-        #     "source": row["source"],
-        #     "sentence": row["sentence"]
-        # }
-
-        # Append data to array
-        # big_data.append(data)
-
-    # print("done")
-    # Insert data to surreal
-    # db.insert('test1', big_data)

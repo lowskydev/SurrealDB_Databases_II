@@ -1,7 +1,7 @@
 mydatabase.db/
-cskg.tsv
 .DS_Store
-last.tsv
-part1.tsv
-part2.tsv
-target.tsv
+
+*.zip
+*.db
+*.csv
+*.tsv

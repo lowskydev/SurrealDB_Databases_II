@@ -25,7 +25,7 @@ with Surreal("ws://localhost:8000/rpc") as db:
     print('----')
 
     # Load CSV
-    csv_file = "part1.tsv"
+    csv_file = "part2.tsv"
 
     time_start = time.time()
     df = pd.read_csv(
@@ -40,12 +40,11 @@ with Surreal("ws://localhost:8000/rpc") as db:
     print('----')
 
 
-    queries = []
-    BATCH_SIZE = 1000
-    # START_INDEX = 0 # default: 0
-    for i, row in df.iterrows():
-    # for i in range(START_INDEX, len(df)):
-        # row = df.iloc[i]
+    SIZE_PART_1 = 3_000_765
+    START_INDEX = 4_823_030 - SIZE_PART_1 # default: 0
+    # for i, row in df.iterrows():
+    for i in range(START_INDEX, len(df)):
+        row = df.iloc[i]
         surreal_node_1 = nodes_dict.get(row['node1'])
         surreal_node_2 = nodes_dict.get(row['node2'])
 
@@ -57,20 +56,10 @@ with Surreal("ws://localhost:8000/rpc") as db:
             # print(f"ERROR: Node 2 '{row['node2']}' not found in SurrealDB (at i = {i})")
             raise Exception(f"ERROR: Node 2 '{row['node2']}' not found in SurrealDB")
 
-        queries = []
-        queries.append(f"RELATE {surreal_node_1['id']}->edge->{surreal_node_2['id']} SET relation = '{row["relation"]}';")
-
-        if i % BATCH_SIZE == 0 and i != 0:
-            db.query(" ".join(queries))
-            queries = []
-
+        db.query(f"RELATE {surreal_node_1['id']}->edge->{surreal_node_2['id']} SET relation = '{row["relation"]}';")
 
         if i % 10000 == 0:
             print(f"{i / df.shape[0] * 100:.2f}%")
-
-    # Handle remaining queries after loop ends
-    if queries:
-        db.query(" ".join(queries))
 
     print("----")
     print(f"Made realtions between nodes")

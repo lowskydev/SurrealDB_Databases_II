@@ -39,8 +39,7 @@ with Surreal("ws://localhost:8000/rpc") as db:
     print(f'TSV loaded ({(time_end - time_start):.2f} seconds)')
     print('----')
 
-
-    SIZE_PART_1 = 3_000_765
+    SIZE_PART_1 = 3_000_766
     START_INDEX = 4_823_030 - SIZE_PART_1 # default: 0
     # for i, row in df.iterrows():
     for i in range(START_INDEX, len(df)):

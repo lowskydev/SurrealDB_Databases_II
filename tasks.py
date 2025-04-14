@@ -209,3 +209,99 @@ with Surreal("ws://localhost:8000/rpc") as db:
 
     ####################################
     ### Task 10: Count nodes which do not have any successors.
+    print(f"--- TASK 10 ---")
+
+    # test 1
+    # time: 186 minutes
+    # result: 649,184
+    time_start = time.time()
+
+    no_successor_count = db.query("RETURN count(SELECT * FROM Nodes WHERE count(->edge->Nodes) = 0 PARALLEL);")
+
+    print(f"Total nodes without successors: {no_successor_count}")
+
+    time_end = time.time()
+    print_time(time_start, time_end)
+
+    """
+    # test 2
+    # time: 403 minutes
+    # result: 649,184
+    time_start = time.time()
+
+    all_nodes = db.query("SELECT * FROM Nodes PARALLEL;")
+
+    no_successor_count = 0
+    for i, node in enumerate(all_nodes):
+        if not find_successors(node['id']):
+            no_successor_count += 1
+
+        # if i % 10000 == 0 and i != 0:
+            # print(f"Progress: {(i / len(all_nodes)) * 100:.2f}%")
+
+    print(f"Total nodes without successors (2): {no_successor_count}")
+
+    time_end = time.time()
+    print_time(time_start, time_end)
+
+    # what if we insert a count predecessors and successors fields into Nodes?
+    """
+    ########################################
+    ### Task 11: Count nodes which do not have any predecessors.
+    print(f"--- TASK 11 ---")
+    time_start = time.time()
+
+    no_predecessor_count = db.query("RETURN count(SELECT * FROM Nodes WHERE count(<-edge<-Nodes) = 0 PARALLEL);")
+
+    print(f"Total nodes without predecessors: {no_predecessor_count}")
+
+    time_end = time.time()
+    print_time(time_start, time_end)
+
+    ########################################
+    ### Task 12: Find nodes with the most neighbours.
+    print(f"--- TASK 12 ---")
+    time_start = time.time()
+
+    max_neighbours = 0
+    max_neighbours_nodes = list()
+    all_nodes = db.query("SELECT * FROM Nodes PARALLEL;")
+    for i, node in enumerate(all_nodes):
+        neighbours = find_neighbours(node['id'])
+        if len(neighbours) > max_neighbours:
+            max_neighbours = len(neighbours)
+            max_neighbours_nodes = list()
+            max_neighbours_nodes.append(node['node'])
+        elif len(neighbours) == max_neighbours:
+            max_neighbours_nodes.append(node['node'])
+
+        if i % 10000 == 0 and i != 0:
+            print(f"Progress: {(i / len(all_nodes)) * 100:.2f}%")
+
+    print(f"Nodes with the most neighbours ({max_neighbours}):")
+    for node in max_neighbours_nodes:
+        print_node_info(node)
+
+    time_end = time.time()
+    print_time(time_start, time_end)
+
+    ########################################
+    ### Task 13: Count nodes with a single neighbour.
+    print(f"--- TASK 13 ---")
+    time_start = time.time()
+
+    single_neighbour_count = 0
+    all_nodes = db.query("SELECT * FROM Nodes PARALLEL;")
+    for i, node in enumerate(all_nodes):
+        neighbours = find_neighbours(node['id'])
+        if len(neighbours) == 1:
+            single_neighbour_count += 1
+
+        if i % 10000 == 0 and i != 0:
+            print(f"Progress: {(i / len(all_nodes)) * 100:.2f}%")
+
+    print(f"Total nodes with a single neighbour: {single_neighbour_count}")
+
+    time_end = time.time()
+    print_time(time_start, time_end)
+

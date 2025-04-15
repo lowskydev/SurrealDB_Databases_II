@@ -1,0 +1,67 @@
+--- SOURCE NODE ---
+  ID: Nodes:hrf3woyawq4enjr1z5he, Name: /c/en/spectrogram,  Label: spectrogram
+--- TASK 1 ---
+Successors of /c/en/spectrogram:
+  ID: Nodes:2dv936n47wcmep8qyjz4, Name: /c/en/gram,  Label: gram
+  ID: Nodes:xmya0oqnen9hb1vm6w98, Name: /c/en/spectrograph,  Label: spectrograph
+Time elapsed: 13.95 ms
+--- TASK 2 ---
+Total successors of /c/en/spectrogram: 2
+Time elapsed: 0.00 ms
+--- TASK 3 ---
+Predecessors of /c/en/spectrogram:
+  ID: Nodes:geebv4rh6tpkjuqynblp, Name: /c/en/voicegram/n,  Label: voicegram
+  ID: Nodes:vx5hac04qy79tz0yfipg, Name: /c/en/spectrograph/n,  Label: spectrograph
+  ID: Nodes:ng1h9vhe4pqnr9o0h76t, Name: /c/en/sonogram/n,  Label: sonogram
+  ID: Nodes:js2bsgr81627jneakgi4, Name: /c/en/hypnospectrogram,  Label: hypnospectrogram
+  ID: Nodes:kwe26uslupfcy4oznfzj, Name: /c/en/spectrograms/n,  Label: spectrograms
+  ID: Nodes:bgwlfw47xo9znweul9lz, Name: /c/en/scalogram/n,  Label: scalogram
+  ID: Nodes:xmya0oqnen9hb1vm6w98, Name: /c/en/spectrograph,  Label: spectrograph
+Time elapsed: 10.48 ms
+--- TASK 4 ---
+Total predecessors of /c/en/spectrogram: 7
+Time elapsed: 0.00 ms
+--- TASK 5 ---
+Neighbours of /c/en/spectrogram:
+  ID: Nodes:geebv4rh6tpkjuqynblp, Name: /c/en/voicegram/n,  Label: voicegram
+  ID: Nodes:vx5hac04qy79tz0yfipg, Name: /c/en/spectrograph/n,  Label: spectrograph
+  ID: Nodes:ng1h9vhe4pqnr9o0h76t, Name: /c/en/sonogram/n,  Label: sonogram
+  ID: Nodes:js2bsgr81627jneakgi4, Name: /c/en/hypnospectrogram,  Label: hypnospectrogram
+  ID: Nodes:kwe26uslupfcy4oznfzj, Name: /c/en/spectrograms/n,  Label: spectrograms
+  ID: Nodes:bgwlfw47xo9znweul9lz, Name: /c/en/scalogram/n,  Label: scalogram
+  ID: Nodes:xmya0oqnen9hb1vm6w98, Name: /c/en/spectrograph,  Label: spectrograph
+  ID: Nodes:2dv936n47wcmep8qyjz4, Name: /c/en/gram,  Label: gram
+Time elapsed: 5.78 ms
+--- TASK 6 ---
+Total neighbours of /c/en/spectrogram: 8
+Time elapsed: 0.00 ms
+--- TASK 7 ---
+  Grandchildren of /c/en/gram:
+    ID: Nodes:kvjksic3ds294z071oqn, Name: /c/en/grim,  Label: grim
+    ID: Nodes:fcemdwfcvbgpih6q9laq, Name: /c/en/written,  Label: written
+    ID: Nodes:73t6r8hjwp36i05jka5i, Name: /c/en/milligram,  Label: milligram
+    ID: Nodes:hrtdeicccw8kmsei0iw4, Name: /c/en/gm,  Label: gm
+    ID: Nodes:sk7p47lx60kflyrqd2fj, Name: /c/en/drawn,  Label: drawn
+    ID: Nodes:blwd1m2fhqh5qvr0kj9g, Name: /c/en/g,  Label: g
+    ID: Nodes:38wz5zmeb9b965x9oegk, Name: /c/en/gramme,  Label: gramme
+    ID: Nodes:9w20fblanp1j2eqlqcpa, Name: /c/en/kilogram,  Label: kilogram
+    ID: Nodes:qw2pnf6jaeyhjbhz5wvw, Name: /c/en/recorded,  Label: recorded
+  Grandchildren of /c/en/spectrograph:
+    ID: Nodes:hrf3woyawq4enjr1z5he, Name: /c/en/spectrogram,  Label: spectrogram
+Time elapsed: 20.57 ms
+--- TASK 8 ---
+  Grandparents of /c/en/hypnospectrogram:
+    ID: Nodes:l8hg2rifmnj5cuiivbxs, Name: /c/en/hypnospectrograms/n,  Label: hypnospectrograms
+  Grandparents of /c/en/spectrograph:
+    ID: Nodes:m1f8rpresgw23wlqci72, Name: /c/en/spectrographic/a,  Label: spectrographic
+    ID: Nodes:p7ifpb4u6ucz6vte6915, Name: /c/en/telespectrograph/n,  Label: telespectrograph
+    ID: Nodes:wxf2q2rcp49hitizjt70, Name: /c/en/spectrogram/n,  Label: spectrogram
+    ID: Nodes:me2qkh9d1q4g28tc7sv3, Name: /c/en/spectroscope,  Label: spectroscope
+    ID: Nodes:hwky78sraswfyfijnw9s, Name: /c/en/spectrographs/n,  Label: spectrographs
+    ID: Nodes:hrf3woyawq4enjr1z5he, Name: /c/en/spectrogram,  Label: spectrogram
+    ID: Nodes:zpn4kufb7e11kfd6aysu, Name: /c/en/spectrography/n,  Label: spectrography
+Time elapsed: 47.68 ms
+--- TASK 9 ---
+Total nodes in the database: 2160968
+Time elapsed: 7.72 seconds
+--- TASK 10 ---

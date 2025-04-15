@@ -1,0 +1,3 @@
+--- SOURCE NODE ---
+  ID: Nodes:y0grv1hz255cz3mv9e8s, Name: /c/en/steam_locomotive,  Label: steam locomotive
+--- TASK 1 ---

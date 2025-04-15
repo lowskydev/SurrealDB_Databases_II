@@ -3,7 +3,7 @@ import time
 from contextlib import redirect_stdout
 from datetime import date, datetime
 
-SOURCE_NODE_NAME = "/c/en/linux"
+SOURCE_NODE_NAME = "/c/en/spectrogram"
 
 
 def print_node_info(input_node, show_full=False, indent=2):
@@ -19,7 +19,7 @@ def print_node_info(input_node, show_full=False, indent=2):
     if show_full:
         print(f"{indent * " "}ID: {input_node['id']}, Name: {input_node['node']},  Label: {input_node['label']}")
     else:
-        print(f"{indent * " "}Node: {input_node['node']}")
+        print(f"{indent * " "}Node: {input_node['node']}, Label: {input_node['label']}")
 
 
 def find_successors(source_node_id):
@@ -30,7 +30,8 @@ def find_successors(source_node_id):
     Returns:
         list: A list of successor nodes.
     """
-    successors = db.query(f"SELECT * FROM {source_node_id}->edge->Nodes PARALLEL;")
+    successors = db.query(f"SELECT * FROM array::distinct({source_node_id}->edge->Nodes) PARALLEL;")
+
     return successors
 
 
@@ -42,7 +43,8 @@ def find_predecessors(source_node_id):
     Returns:
         list: A list of predecessor nodes.
     """
-    predecessors = db.query(f"SELECT * FROM {source_node_id}<-edge<-Nodes PARALLEL;")
+    predecessors = db.query(f"SELECT * FROM array::distinct({source_node_id}<-edge<-Nodes) PARALLEL;")
+
     return predecessors
 
 
@@ -54,11 +56,8 @@ def find_neighbours(source_node_id):
     Returns:
         list: A list of neighbour nodes.
     """
-    successors = find_successors(source_node_id)
-    predecessors = find_predecessors(source_node_id)
+    neighbours = db.query(f"SELECT * FROM array::distinct(array::concat({source_node_id}<-edge<-Nodes, {source_node_id}->edge->Nodes))")
 
-    # Remove duplicates by converting to a dictionary and back to a list
-    neighbours = list({str(item['id']): item for item in (successors + predecessors)}.values())
     return neighbours
 
 
@@ -173,12 +172,10 @@ with Surreal("ws://localhost:8000/rpc") as db:
             print(f"--- TASK 7 ---")
             time_start = time.time()
 
-            for successor in successors:
-                grandchildren = find_successors(successor['id'])
-                if grandchildren:
-                    print(f"  Grandchildren of {successor['node']}:")
-                    for grandchild in grandchildren:
-                        print_node_info(grandchild, indent=4)
+            grandchildren = db.query(f"count(SELECT * FROM array::distinct(array::concat({source_node_id}->edge->Nodes->edge->Nodes)))")
+
+            for grandchild in grandchildren:
+                print_node_info(grandchild, indent=4)
 
             time_end = time.time()
             print_time(time_start, time_end)
@@ -187,13 +184,10 @@ with Surreal("ws://localhost:8000/rpc") as db:
             print(f"--- TASK 8 ---")
             time_start = time.time()
 
-            for predecessor in predecessors:
-                grandparents = find_predecessors(predecessor['id'])
-                if grandparents:
-                    print(f"  Grandparents of {predecessor['node']}:")
+            grandparents = db.query(f"count(SELECT * FROM array::distinct(array::concat({source_node_id}<-edge<-Nodes<-edge<-Nodes)))")
 
-                    for grandparent in grandparents:
-                        print_node_info(grandparent, indent=4)
+            for grandparent in grandparents:
+                print_node_info(grandparent, indent=4)
 
             time_end = time.time()
             print_time(time_start, time_end)
@@ -203,9 +197,6 @@ with Surreal("ws://localhost:8000/rpc") as db:
             time_start = time.time()
 
             node_count = db.query("RETURN count(SELECT * FROM Nodes PARALLEL);")
-            # BARTOSZ - IS THERE FASTER WAY TO DO IT?
-            # There's 'INFO FOR TABLE Nodes' query but it doesn't return the count of nodes in the table
-            # maybe we could add some metadate there perhaps?
 
             print(f"Total nodes in the database: {node_count}")
 

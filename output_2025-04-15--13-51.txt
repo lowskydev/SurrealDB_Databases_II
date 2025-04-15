@@ -1,0 +1,106 @@
+--- SOURCE NODE ---
+  ID: Nodes:y0grv1hz255cz3mv9e8s, Name: /c/en/steam_locomotive,  Label: steam locomotive
+--- TASK 1 ---
+Successors of /c/en/steam_locomotive:
+  Node: /c/en/locomotive/n
+  Node: /c/en/steam/n
+  Node: /c/en/steam_locomotive
+Time elapsed: 5.90 ms
+--- TASK 2 ---
+Total successors of /c/en/steam_locomotive: 3
+Time elapsed: 0.00 ms
+--- TASK 3 ---
+Predecessors of /c/en/steam_locomotive:
+  Node: /c/en/locomotive/n
+  Node: /c/en/steam/n
+  Node: /c/en/steam_locomotive
+Time elapsed: 15.62 ms
+--- TASK 4 ---
+Total predecessors of /c/en/steam_locomotive: 3
+Time elapsed: 0.00 ms
+--- TASK 5 ---
+Neighbours of /c/en/steam_locomotive:
+  Node: /c/en/locomotive/n
+  Node: /c/en/steam/n
+  Node: /c/en/steam_locomotive
+Time elapsed: 14.99 ms
+--- TASK 6 ---
+Total neighbours of /c/en/steam_locomotive: 3
+Time elapsed: 0.00 ms
+--- TASK 7 ---
+  Grandchildren of /c/en/locomotive/n:
+    Node: /c/en/fuel_powered_device/n
+    Node: /c/en/loco
+    Node: /c/en/power
+    Node: /c/en/increase
+    Node: /c/en/progressive
+    Node: /c/en/slow
+    Node: /c/en/economy
+    Node: /c/en/cheer
+    Node: /c/en/land_vehicle/n
+    Node: /c/en/speed
+    Node: /c/en/coach
+    Node: /c/en/traction_engine
+    Node: /c/en/rail_transport
+    Node: /c/en/drives
+    Node: /c/en/economics
+    Node: /c/en/train
+    Node: /c/en/slang
+    Node: /c/en/place_occupied_by_humans/n
+    Node: /c/en/wheeled_vehicle/n
+    Node: /c/en/wagon
+  Grandchildren of /c/en/steam/n:
+    Node: /c/en/mechanical
+    Node: /c/en/fencing
+    Node: /c/en/power
+    Node: /c/en/stem
+    Node: /c/en/gas
+    Node: /c/en/electric
+    Node: /c/en/stemm
+    Node: /c/en/water/n
+    Node: /c/en/anger
+    Node: /c/en/pressurized
+    Node: /c/en/provide
+    Node: /c/en/steamer
+    Node: /c/en/pent_up
+    Node: /c/en/cooking
+    Node: /c/en/gas/n/opencyc/gaseous_tangible_thing
+    Node: /c/en/phase
+    Node: /c/en/exhalation
+    Node: /c/en/energy
+    Node: /c/en/vapour
+    Node: /c/en/heating
+    Node: /c/en/motive
+    Node: /c/en/water
+    Node: /c/en/cleaning_substance/n
+    Node: /c/en/liquid
+    Node: /c/en/vapor
+  Grandchildren of /c/en/steam_locomotive:
+    Node: /c/en/locomotive/n
+    Node: /c/en/steam/n
+    Node: /c/en/steam_locomotive
+Time elapsed: 19.80 ms
+--- TASK 8 ---
+  Grandparents of /c/en/locomotive/n:
+    Node: /c/en/locomotive/n
+    Node: /c/en/steam/n
+    Node: /c/en/steam_locomotive
+  Grandparents of /c/en/steam/n:
+    Node: /c/en/locomotive/n
+    Node: /c/en/steam/n
+    Node: /c/en/steam_locomotive
+  Grandparents of /c/en/steam_locomotive:
+    Node: /c/en/locomotive/n
+    Node: /c/en/steam/n
+    Node: /c/en/steam_locomotive
+Time elapsed: 25.69 ms
+--- TASK 9 ---
+Total nodes in the database: 2160968
+Time elapsed: 7.21 seconds
+--- TASK 10 ---
+Total nodes without successors: 649184
+Time elapsed: 7.28 minutes
+--- TASK 11 ---
+Total nodes without predecessors: 1129781
+Time elapsed: 7.41 minutes
+--- TASK 12 ---

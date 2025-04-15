@@ -1,0 +1,62 @@
+--- SOURCE NODE ---
+  ID: Nodes:6717knna3sw7yygi6wk6, Name: Q40157,  Label: lava
+--- TASK 1 ---
+Successors of Q40157:
+  Node: Q42278
+  Node: Q488416
+  Node: Q42278
+  Node: Q22731
+Time elapsed: 4.65 ms
+--- TASK 2 ---
+Total successors of Q40157: 4
+Time elapsed: 0.00 ms
+--- TASK 3 ---
+Predecessors of Q40157:
+  Node: Q10536135
+  Node: Q119306
+  Node: Q839679
+  Node: Q12047003
+  Node: Q42278
+  Node: Q119306
+Time elapsed: 5.58 ms
+--- TASK 4 ---
+Total predecessors of Q40157: 6
+Time elapsed: 0.00 ms
+--- TASK 5 ---
+Neighbours of Q40157:
+  Node: Q42278
+  Node: Q488416
+  Node: Q22731
+  Node: Q10536135
+  Node: Q119306
+  Node: Q839679
+  Node: Q12047003
+Time elapsed: 10.22 ms
+--- TASK 6 ---
+Total neighbours of Q40157: 7
+Time elapsed: 0.00 ms
+--- TASK 7 ---
+  Grandchildren of Q42278:
+    Node: Q40157
+  Grandchildren of Q488416:
+    Node: Q35145263
+  Grandchildren of Q42278:
+    Node: Q40157
+  Grandchildren of Q22731:
+    Node: Q936791
+    Node: Q3300024
+    Node: Q15115254
+    Node: Q192355
+    Node: Q581776
+Time elapsed: 21.72 ms
+--- TASK 8 ---
+  Grandparents of Q42278:
+    Node: Q40157
+    Node: Q488634
+    Node: Q12051335
+    Node: Q40157
+Time elapsed: 31.03 ms
+--- TASK 9 ---
+Total nodes in the database: 2160968
+Time elapsed: 6.19 seconds
+--- TASK 10 ---

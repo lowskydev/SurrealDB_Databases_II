@@ -1,0 +1,215 @@
+--- SOURCE NODE ---
+  ID: Nodes:y0grv1hz255cz3mv9e8s, Name: /c/en/steam_locomotive,  Label: steam locomotive
+--- TASK 1 ---
+Successors of /c/en/steam_locomotive:
+  Node: /c/en/locomotive/n
+  Node: /c/en/steam/n
+  Node: /c/en/steam_locomotive
+Time elapsed: 5.24 ms
+--- TASK 2 ---
+Total successors of /c/en/steam_locomotive: 3
+Time elapsed: 0.00 ms
+--- TASK 3 ---
+Predecessors of /c/en/steam_locomotive:
+  Node: /c/en/locomotive/n
+  Node: /c/en/steam/n
+  Node: /c/en/steam_locomotive
+Time elapsed: 12.09 ms
+--- TASK 4 ---
+Total predecessors of /c/en/steam_locomotive: 3
+Time elapsed: 0.00 ms
+--- TASK 5 ---
+Neighbours of /c/en/steam_locomotive:
+  Node: /c/en/berkshire/n
+  Node: /c/en/4_14_4/n
+  Node: /c/en/ashpan/n
+  Node: /c/en/steam_locomotives/n
+  Node: /c/en/compound/n/wikt/en_2
+  Node: /c/en/cab_forward/n
+  Node: /c/en/2_6_4/n
+  Node: /c/en/2_2_2/n
+  Node: /c/en/boiler_ticket/n
+  Node: /c/en/2_10_4/n
+  Node: /c/en/running_board/n
+  Node: /c/en/4_8_2/n
+  Node: /c/en/0_2_2/n
+  Node: /c/en/birmingham_dribbler/n
+  Node: /c/en/trailing_axle/n
+  Node: /c/en/0_10_2/n
+  Node: /c/en/0_10_0/n
+  Node: /c/en/4_2_0/n
+  Node: /c/en/coal_pusher/n
+  Node: /c/en/leading_truck/n
+  Node: /c/en/2_12_4/n
+  Node: /c/en/4_8_6/n
+  Node: /c/en/0_8_0/n
+  Node: /c/en/4_4_0/n
+  Node: /c/en/backhead/n
+  Node: /c/en/leading_axle/n
+  Node: /c/en/2_10_2/n
+  Node: /c/en/smoke_deflector/n
+  Node: /c/en/4_4_2/n
+  Node: /c/en/4_6_4/n
+  Node: /c/en/richard_trevithick
+  Node: /c/en/6_4_4_6/n
+  Node: /c/en/4_8_4/n
+  Node: /c/en/steam_engine/n
+  Node: /c/en/2_8_6/n
+  Node: fn:fe:use
+  Node: /c/en/4_10_0/n
+  Node: /c/en/garratt/n
+  Node: /c/en/4_6_2_2_6_4/n
+  Node: /c/en/0_6_2/n
+  Node: /c/en/4_10_2/n
+  Node: /c/en/iron_horse/n
+  Node: /c/en/northern/n
+  Node: /c/en/4_6_2/n
+  Node: /c/en/2_12_0/n
+  Node: /c/en/steam_locomotive
+  Node: /c/en/2_2_4/n
+  Node: /c/en/0_4_0_0_4_0/n
+  Node: /c/en/4_4_6_4/n
+  Node: /c/en/track_pan/n
+  Node: /c/en/6_2_0/n
+  Node: /c/en/stephensonian/a
+  Node: /c/en/steam_generator/n
+  Node: /c/en/2_4_2/n
+  Node: /c/en/chugga
+  Node: /c/en/leading_wheel/n
+  Node: /c/en/0_6_0/n
+  Node: /c/en/2_6_0/n
+  Node: /c/en/2_8_4/n
+  Node: /c/en/2_8_2/n
+  Node: /c/en/6_8_6/n
+  Node: /c/en/whyte_notation/n
+  Node: /c/en/trailing_wheel/n
+  Node: /c/en/trailing_truck/n
+  Node: /c/en/4_2_2/n
+  Node: /c/en/hall/n
+  Node: /c/en/0_12_0/n
+  Node: /c/en/footplate/n
+  Node: /c/en/water_trough/n
+  Node: /c/en/2_12_2/n
+  Node: /c/en/mikado/n
+  Node: /c/en/4_12_2/n
+  Node: /c/en/2_2_0/n
+  Node: /c/en/steam_shovel/n
+  Node: /c/en/blastpipe/n
+  Node: /c/en/4_8_0/n
+  Node: /c/en/2_10_0/n
+  Node: /c/en/regulator/n
+  Node: /c/en/2_6_0_0_6_2/n
+  Node: /c/en/2_8_8_8_2/n
+  Node: /c/en/4_4_4_4/n
+  Node: /c/en/2_6_2/n
+  Node: /c/en/2_8_0/n
+  Node: /c/en/4_4_4/n
+  Node: /c/en/choo_choo/n
+  Node: /c/en/2_4_4/n
+  Node: /c/en/rod/n
+  Node: /c/en/4_6_4_4/n
+  Node: /c/en/4_8_4_4_8_4/n
+  Node: /c/en/mountain/n
+  Node: /c/en/challenger/n
+  Node: /c/en/0_4_2/n
+  Node: /c/en/driving_wheel/n
+  Node: /c/en/pufferbelly/n
+  Node: /c/en/ashpit/n
+  Node: /c/en/0_6_4/n
+  Node: /c/en/2_8_0_0_8_2/n
+  Node: /c/en/2_4_0/n
+  Node: /c/en/feedwater_heater/n
+  Node: /c/en/steamroller
+  Node: /c/en/0_8_2/n
+  Node: /c/en/coaling_tower/n
+  Node: /c/en/0_4_0/n
+  Node: /c/en/2_6_6/n
+  Node: /c/en/4_2_4/n
+  Node: /c/en/tank_engine/n
+  Node: /c/en/coaling_stage/n
+  Node: /c/en/0_4_4/n
+  Node: /c/en/4_6_0/n
+  Node: /c/en/2_8_8_8_4/n
+  Node: /c/en/a1/n/wikt/en_3
+  Node: /c/en/pacific/n
+  Node: /c/en/atlantic/n
+  Node: /c/en/driving_axle/n
+  Node: /c/en/0_8_4/n
+  Node: /c/en/seatbox/n
+  Node: /c/en/locomotive/n
+  Node: /c/en/steam/n
+Time elapsed: 12.23 ms
+--- TASK 6 ---
+Total neighbours of /c/en/steam_locomotive: 118
+Time elapsed: 0.00 ms
+--- TASK 7 ---
+  Grandchildren of /c/en/locomotive/n:
+    Node: /c/en/fuel_powered_device/n
+    Node: /c/en/loco
+    Node: /c/en/power
+    Node: /c/en/increase
+    Node: /c/en/progressive
+    Node: /c/en/slow
+    Node: /c/en/economy
+    Node: /c/en/cheer
+    Node: /c/en/land_vehicle/n
+    Node: /c/en/speed
+    Node: /c/en/coach
+    Node: /c/en/traction_engine
+    Node: /c/en/rail_transport
+    Node: /c/en/drives
+    Node: /c/en/economics
+    Node: /c/en/train
+    Node: /c/en/slang
+    Node: /c/en/place_occupied_by_humans/n
+    Node: /c/en/wheeled_vehicle/n
+    Node: /c/en/wagon
+  Grandchildren of /c/en/steam/n:
+    Node: /c/en/mechanical
+    Node: /c/en/fencing
+    Node: /c/en/power
+    Node: /c/en/stem
+    Node: /c/en/gas
+    Node: /c/en/electric
+    Node: /c/en/stemm
+    Node: /c/en/water/n
+    Node: /c/en/anger
+    Node: /c/en/pressurized
+    Node: /c/en/provide
+    Node: /c/en/steamer
+    Node: /c/en/pent_up
+    Node: /c/en/cooking
+    Node: /c/en/gas/n/opencyc/gaseous_tangible_thing
+    Node: /c/en/phase
+    Node: /c/en/exhalation
+    Node: /c/en/energy
+    Node: /c/en/vapour
+    Node: /c/en/heating
+    Node: /c/en/motive
+    Node: /c/en/water
+    Node: /c/en/cleaning_substance/n
+    Node: /c/en/liquid
+    Node: /c/en/vapor
+  Grandchildren of /c/en/steam_locomotive:
+    Node: /c/en/locomotive/n
+    Node: /c/en/steam/n
+    Node: /c/en/steam_locomotive
+Time elapsed: 33.73 ms
+--- TASK 8 ---
+  Grandparents of /c/en/locomotive/n:
+    Node: /c/en/locomotive/n
+    Node: /c/en/steam/n
+    Node: /c/en/steam_locomotive
+  Grandparents of /c/en/steam/n:
+    Node: /c/en/locomotive/n
+    Node: /c/en/steam/n
+    Node: /c/en/steam_locomotive
+  Grandparents of /c/en/steam_locomotive:
+    Node: /c/en/locomotive/n
+    Node: /c/en/steam/n
+    Node: /c/en/steam_locomotive
+Time elapsed: 28.34 ms
+--- TASK 9 ---
+Total nodes in the database: 2160968
+Time elapsed: 11.09 seconds
+--- TASK 10 ---

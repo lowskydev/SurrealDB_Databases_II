@@ -1,0 +1,67 @@
+--- SOURCE NODE ---
+  ID: Nodes:hrf3woyawq4enjr1z5he, Name: /c/en/spectrogram,  Label: spectrogram
+--- TASK 1 ---
+Successors of /c/en/spectrogram:
+  Node: /c/en/gram
+  Node: /c/en/spectrograph
+Time elapsed: 7.92 ms
+--- TASK 2 ---
+Total successors of /c/en/spectrogram: 2
+Time elapsed: 0.00 ms
+--- TASK 3 ---
+Predecessors of /c/en/spectrogram:
+  Node: /c/en/voicegram/n
+  Node: /c/en/spectrograph/n
+  Node: /c/en/sonogram/n
+  Node: /c/en/hypnospectrogram
+  Node: /c/en/spectrograms/n
+  Node: /c/en/scalogram/n
+  Node: /c/en/spectrograph
+Time elapsed: 6.95 ms
+--- TASK 4 ---
+Total predecessors of /c/en/spectrogram: 7
+Time elapsed: 0.00 ms
+--- TASK 5 ---
+Neighbours of /c/en/spectrogram:
+  Node: /c/en/voicegram/n
+  Node: /c/en/spectrograph/n
+  Node: /c/en/sonogram/n
+  Node: /c/en/hypnospectrogram
+  Node: /c/en/spectrograms/n
+  Node: /c/en/scalogram/n
+  Node: /c/en/spectrograph
+  Node: /c/en/gram
+Time elapsed: 6.65 ms
+--- TASK 6 ---
+Total neighbours of /c/en/spectrogram: 8
+Time elapsed: 0.00 ms
+--- TASK 7 ---
+  Grandchildren of /c/en/gram:
+    Node: /c/en/grim
+    Node: /c/en/written
+    Node: /c/en/milligram
+    Node: /c/en/gm
+    Node: /c/en/drawn
+    Node: /c/en/g
+    Node: /c/en/gramme
+    Node: /c/en/kilogram
+    Node: /c/en/recorded
+  Grandchildren of /c/en/spectrograph:
+    Node: /c/en/spectrogram
+Time elapsed: 16.40 ms
+--- TASK 8 ---
+  Grandparents of /c/en/hypnospectrogram:
+    Node: /c/en/hypnospectrograms/n
+  Grandparents of /c/en/spectrograph:
+    Node: /c/en/spectrographic/a
+    Node: /c/en/telespectrograph/n
+    Node: /c/en/spectrogram/n
+    Node: /c/en/spectroscope
+    Node: /c/en/spectrographs/n
+    Node: /c/en/spectrogram
+    Node: /c/en/spectrography/n
+Time elapsed: 154.72 ms
+--- TASK 9 ---
+Total nodes in the database: 2160968
+Time elapsed: 9.88 seconds
+--- TASK 10 ---

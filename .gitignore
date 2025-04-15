@@ -1,5 +1,6 @@
 mydatabase.db/
 .DS_Store
+database*
 
 *.zip
 *.db
